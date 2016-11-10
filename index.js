@@ -19,13 +19,13 @@ var resize = function() {
   }, 10);
 };
 
-function loadSound(url, cb) {
+function loadSound(url, callback) {
   var request = new XMLHttpRequest();
   request.open("GET", url, true);
   request.responseType = "arraybuffer";
 
   request.onload = function() {
-    audioContext.decodeAudioData(request.response, cb);
+    audioContext.decodeAudioData(request.response, callback);
   };
 
   request.send();
